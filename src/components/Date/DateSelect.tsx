@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react/display-name */
 import { Calendar } from "iconsax-react";
 import React from "react";
 import DatePicker from "react-datepicker";
@@ -11,7 +11,7 @@ interface DateSelectProps {
   selected?: Date | null;
   minDate?: Date;
   style?: React.CSSProperties;
-  disbaled?: boolean;
+  disabled?: boolean;
   nullValuePlaceHolder?: string;
 }
 export default function DateSelect({
@@ -21,7 +21,7 @@ export default function DateSelect({
   selected,
   minDate,
   style,
-  disbaled = false,
+  disabled = false,
   nullValuePlaceHolder = "",
 }: DateSelectProps) {
   const CustomInput = React.forwardRef(
@@ -32,7 +32,7 @@ export default function DateSelect({
           className={
             "flex flex-row !w-[12rem] gap-4 items-center border border-transparent  " +
             className +
-            (disbaled ? " opacity-80" : " hover:border-[#B0BACA]")
+            (disabled ? " opacity-80" : " hover:border-[#B0BACA]")
           }
           style={style}
         >
@@ -43,7 +43,7 @@ export default function DateSelect({
             onChange={onChange}
             placeholder={placeholderText}
             ref={ref}
-            // disabled={disbaled}
+            // disabled={disabled}
           />
         </div>
       );
@@ -56,9 +56,10 @@ export default function DateSelect({
         customInput={<CustomInput />}
         selected={selected}
         minDate={minDate}
-        // disabled={disbaled}
+        // disabled={disabled}
         dateFormat="dd/MM/yyyy" // Setting the date format
       />
     </div>
   );
 }
+DateSelect.displayName = 'DateSelect';
