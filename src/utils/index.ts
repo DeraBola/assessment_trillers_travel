@@ -2,7 +2,7 @@ import { Activity, Airplane, Box1, Setting, Wallet } from "iconsax-react";
 
 export const sideBarArr = [
     {
-        link:"/flights",
+        link:"/",
         label:"Dashboard",
     },
     {
