@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import { Calendar } from "iconsax-react";
 import React from "react";
 import DatePicker from "react-datepicker";
