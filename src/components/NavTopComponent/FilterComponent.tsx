@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/select";
 import { Tabs } from "@/components/ui/tabs";
 import DateSelect from "../Date/DateSelect";
+import { SelectGroup } from "@radix-ui/react-select";
 
 interface IFilterComponent {
   tabArr: string[];
@@ -41,7 +42,7 @@ function FilterComponent({
 
   return (
     <div className="bg-white z-[99] rounded-3xl fixed flex flex-col items-start justify-start gap-9 px-5 py-4 w-[60rem]">
-      <div className="first w-full flex items-center justify-between">
+      <div className="first w-full relative flex items-center justify-between">
         <div className="flex items-center w-[30rem] justify-between bg-[#e1eceb] rounded-3xl py-2 px-5 gap-6">
         <div className="flex items-center justify-center gap-5">
         <Location color="#425c5a" variant="Bold" size="20" />
@@ -58,7 +59,6 @@ function FilterComponent({
           <span>{destination}</span>
         </p>
       </div>
-
         </div>
           <DateSelect
             selected={startDate}
@@ -69,22 +69,38 @@ function FilterComponent({
             className="border bg-[#e1eceb] rounded-2xl flex item-center justify-center py-4 px-4  h-10 shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]"
           />
         <Select>
-          <SelectTrigger className="w-[12rem] bg-[#e1eceb] rounded-2xl">
+          <SelectTrigger className="w-[12rem] outline-none bg-[#e1eceb] rounded-2xl">
             <User variant="Bold" size={20} color="#3d5654" />
             <SelectValue
               className="text-[#425c5a] text-sm font-normal"
               placeholder="2 TRAVELERS"
             />
           </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="light">
+          <SelectContent className="z-[999] mt-0 absolute border-2 ">
+            <SelectGroup>
+            <SelectItem value="one">
               <p className="text-[#425c5a] font-normal text-sm">1 TRAVELER</p>
             </SelectItem>
-            <SelectItem value="light">
+            <SelectItem value="two">
               <p className="text-[#425c5a] font-normal text-sm">2 TRAVELERS</p>
             </SelectItem>
+            </SelectGroup>
           </SelectContent>
-        </Select>
+        </Select> 
+        {/* <Select>
+      <SelectTrigger className="w-[180px] ">
+        <SelectValue placeholder="Select a fruit" />
+      </SelectTrigger>
+      <SelectContent className=" z-[999] mt-0 absolute  bg-red-700">
+        <SelectGroup>
+          <SelectItem value="apple">Apple</SelectItem>
+          <SelectItem value="banana">Banana</SelectItem>
+          <SelectItem value="blueberry">Blueberry</SelectItem>
+          <SelectItem value="grapes">Grapes</SelectItem>
+          <SelectItem value="pineapple">Pineapple</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select> */}
       </div>
       <div className="second w-full flex items-start justify-between">
         <Tabs defaultValue="account" className="w-[30rem] relative">
@@ -108,7 +124,7 @@ function FilterComponent({
           <Briefcase variant="Bold" color="#3d5654" size={20} />
           <p className="flex">FIRST CLASS</p>
         </div>
-        <button className="flex gap-3 items-center justify-center bg-[#c99c33] py-2 px-5 rounded-2xl w-[12rem] text-white">
+        <button className="flex gap-3 z-auto items-center justify-center bg-[#c99c33] py-2 px-5 rounded-2xl w-[12rem] text-white">
           <p className="flex">SEARCH</p>
         </button>
       </div>

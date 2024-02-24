@@ -12,7 +12,7 @@ import MapCard from '../MapCard/MapCard';
 
 function OneWayComponent() {
     return (
-        <div className='w-[60rem] overflow-y-scroll pr-5 mt-9 ml-4 bg-[#e1eceb] flex flex-col items-start justify-start'>
+        <div className='w-[60rem] pr-5 mt-9 ml-4 bg-[#e1eceb] flex flex-col items-start justify-start'>
             <div className='w-full flex items-center justify-between mt-5'>
                 <p className='text-[#425c5a] text-base font-normal'>RESULT (25)</p>
                 <div className='flex items-start justify-center gap-6'>
