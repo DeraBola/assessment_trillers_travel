@@ -8,7 +8,7 @@ import { sideBarArr } from "@/utils";
 
 function SidebarComponent() {
   const router = useRouter();
-  const pathname = usePathname();
+  // const pathname = usePathname();
   return (
     <div className="w-[250px] cursor-pointer flex flex-col py-12 gap-6 items-start justify-start h-screen rounded-r-3xl bg-[#3d5654] left-0 top-0 fixed">
       <div className="flex flex-col items-center text-white justify-center ml-4">

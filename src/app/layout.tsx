@@ -17,9 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-[#e1eceb]">
+    <html lang="en" >
          <SidebarComponent />
-      <body className={inter.className}>{children}</body>
+      <body className={`inter.className bg-[#e1eceb]`}>{children}</body>
     </html>
   );
 }
